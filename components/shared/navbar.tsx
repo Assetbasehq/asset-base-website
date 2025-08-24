@@ -100,14 +100,14 @@ function NavLinks({ onClick }: { onClick?: () => void }) {
         Blog
       </Link>
       <Link
-        href="/"
+        href={`${process.env.NEXT_PUBLIC_APP_URL}/auth/register`}
         onClick={onClick}
         className="border px-4 py-2 rounded bg-black hover:bg-white hover:text-black transition-colors duration-300"
       >
         Sign In
       </Link>
       <Link
-        href="/"
+        href={`${process.env.NEXT_PUBLIC_APP_URL}/auth/login`}
         onClick={onClick}
         className="px-4 py-2 rounded bg-custom-orange font-semibold hover:bg-primary/90 transition-colors duration-300"
       >
