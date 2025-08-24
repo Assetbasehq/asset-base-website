@@ -99,20 +99,21 @@ function NavLinks({ onClick }: { onClick?: () => void }) {
       >
         Blog
       </Link>
-      <Link
-        href={`${process.env.NEXT_PUBLIC_APP_URL}/auth/register`}
+      <a
+        href={`${process.env.NEXT_PUBLIC_APP_URL}/auth/login`}
+        target="_blank"
         onClick={onClick}
         className="border px-4 py-2 rounded bg-black hover:bg-white hover:text-black transition-colors duration-300"
       >
         Sign In
-      </Link>
-      <Link
-        href={`${process.env.NEXT_PUBLIC_APP_URL}/auth/login`}
+      </a>
+      <a
+        // target="_blank"
         onClick={onClick}
-        className="px-4 py-2 rounded bg-custom-orange font-semibold hover:bg-primary/90 transition-colors duration-300"
+        className="px-4 py-2 rounded-full bg-custom-orange font-semibold hover:bg-primary/90 transition-colors duration-300"
       >
         Connect Wallet
-      </Link>
+      </a>
     </>
   );
 }
