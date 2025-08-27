@@ -100,9 +100,12 @@ function NavLinks({ onClick }: { onClick?: () => void }) {
         Blog
       </Link>
       <a
-        href={`${process.env.NEXT_PUBLIC_APP_URL}/auth/login`}
-        target="_blank"
-        onClick={onClick}
+        href="#"
+        onClick={() => {
+          onClick?.();
+          window.open(`${process.env.NEXT_PUBLIC_APP_URL}`, "_blank");
+        }}
+        rel="noopener noreferrer"
         className="border px-4 py-2 rounded bg-black hover:bg-white hover:text-black transition-colors duration-300"
       >
         Sign In
