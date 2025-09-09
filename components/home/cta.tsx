@@ -18,11 +18,11 @@ export default function CTA() {
       <div
         style={{ backgroundImage: `url(${ctaBackground.src})` }}
         className={cn(
-          `relative z-10 max-w-4xl w-full rounded-2xl bg-custom-orange px-12 py-12 flex flex-col md:flex-row items-center justify-between shadow-2xl overflow-hidden`,
+          `relative z-10 max-w-4xl w-full rounded-2xl bg-custom-orange p-4 pb-32 sm:p-12 flex flex-col md:flex-row items-center justify-between shadow-2xl overflow-hidden`,
           `bg-cover bg-center`
         )}
       >
-        <div className="text-white max-w-md text-center md:text-left">
+        <div className="text-white text-start md:text-left w-full h-full">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
             Start Building Your <br /> Portfolio Today
           </h2>
@@ -39,9 +39,11 @@ export default function CTA() {
           <Image
             src={coinStack}
             alt="Coin stack"
-            width={250}
-            height={180}
-            className="object-contain hidden md:block"
+            // width={250}
+            // height={180}
+            className="object-contain w-30 sm:w-50"
+            
+         
           />
         </div>
       </div>

@@ -29,7 +29,7 @@ export default function AssetCategories() {
         Asset Categories
       </h2>
 
-      <div className="flex gap-18 gap-y-4 flex-wrap justify-center mt-12 max-w-6xl mx-auto">
+      <div className="flex gap-4 gap-y-4 flex-wrap justify-center mt-12 max-w-6xl mx-auto">
         {categories.map((category) => (
           <div key={category.id} className="flex items-center mt-4">
             <Image
@@ -39,7 +39,7 @@ export default function AssetCategories() {
               height={50}
               className="mr-4"
             />
-            <p className="text-white font-semibold">{category.name}</p>
+            <p className="text-white font-semibold text-sm">{category.name}</p>
           </div>
         ))}
       </div>

@@ -11,7 +11,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="w-full px-6 py-4 bg-black text-white">
+    <nav className="w-full px-6 py-4 bg-black text-white relative z-50">
       <div className="flex items-center justify-between max-w-7xl mx-auto">
         <Link href="/" className="flex items-end gap-2">
           <Image

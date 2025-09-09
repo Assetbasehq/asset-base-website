@@ -3,6 +3,7 @@ import React, { Fragment } from "react";
 import teslaImage from "@/public/images/tesla.svg";
 import gridLines from "@/public/images/grid-lines.svg"; // Adjust the path as necessary
 import { Separator } from "../ui/separator";
+import { cn } from "@/lib/utils";
 
 const metrics = [
   { id: 1, label: "Total Trading Volume", value: "$476B" },
@@ -34,25 +35,41 @@ export default function Info() {
         className="relative z-20 w-full max-w-3xl "
       />
 
-      <div className="flex flex-col w-full md:flex-row md:h-40 items-center justify-center max-w-5xl space-x-4 text-sm border-b border-muted-foreground/30 py-8">
+      <div className="grid grid-cols-2 md:flex w-full md:flex-row md:h-40 items-center justify-center max-w-5xl space-x-4 text-sm border-b border-muted-foreground/30 py-8">
         {metrics.map((metric, index) => {
           const islastMetric = index === metrics.length - 1;
+          const isFirstInLine = index % 2 !== 0;
+
+          console.log({
+            islastMetric,
+            isFirstInLine,
+          });
 
           return (
             <Fragment key={index}>
               <div
                 key={index}
-                className="flex w-full flex-col gap-2 items-center justify-between mb-4 p-6"
+                className={cn(
+                  `flex w-full gap-2 items-center justify-between mb-4 p-6 relative`
+                )}
               >
-                <p className="text-5xl font-semibold">{metric.value}</p>
-                <p className="text-sm font-semibold text-muted-foreground">
-                  {metric.label}
-                </p>
+                <div className="flex flex-col gap-2 items-center w-full">
+                  <p className="text-4xl font-semibold">{metric.value}</p>
+                  <p className="text-sm font-semibold text-muted-foreground text-center">
+                    {metric.label}
+                  </p>
+                </div>
+                {!isFirstInLine && (
+                  <Separator
+                    orientation="vertical"
+                    className="!h-15 bg-muted-foreground/30 absolute right-0 md:hidden"
+                  />
+                )}
               </div>
               {!islastMetric && (
                 <Separator
                   orientation="vertical"
-                  className="h-10 w-full bg-muted-foreground/30 hidden md:block"
+                  className="!h-15 w-full bg-muted-foreground/30 hidden md:block"
                 />
               )}
             </Fragment>
